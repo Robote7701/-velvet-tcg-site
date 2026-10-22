@@ -18,7 +18,7 @@ function showCard(id){const c=cards.find(x=>x.id===id);if(!c)return;document.get
 function closeCard(e){if(e&&e.target!==document.getElementById("cardModal"))return;document.getElementById("cardModal").classList.remove("visible")}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCard()});
 let packPulls=[],revealIndex=0,revealBusy=false;
-function pick(){let r
+function pick(){const r=Math.random();const group=r<.04?cards.slice(0,5):r<.20?cards.slice(5,12):r<.55?cards.slice(12,22):cards.slice(22);return group[Math.floor(Math.random()*group.length)]}
 let revealTimer=null;
 function openPack(){
  if(revealBusy)return;
