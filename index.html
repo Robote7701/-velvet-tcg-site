@@ -50,7 +50,7 @@ function finishReveal(){
  document.getElementById("reveal").innerHTML="";
  document.getElementById("packArt").classList.remove("opening");
 }
-se;document.getElementById("openButton").disabled=false;document.getElementById("reveal").innerHTML="";document.getElementById("packArt").classList.remove("opening")}
+
 function fight(){let c=cards.find(c=>c.id===Number(document.getElementById("fighter").value));if(!c){document.getElementById("log").textContent="Ouvre un booster pour obtenir une carte.";return}let enemy=cards[Math.floor(Math.random()*cards.length)];let score=c.attack+c.defense+c.hp/3+Math.random()*60;let other=enemy.attack+enemy.defense+enemy.hp/3+Math.random()*60;let won=score>=other;state.coins+=won?60:20;document.getElementById("log").textContent=c.name+" VS "+enemy.name+" — "+(won?"Victoire ! +60 crédits":"Défaite ! +20 crédits");save()}render();
 
 // Les portraits fixes déjà validés sont conservés.
